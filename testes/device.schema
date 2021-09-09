@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome",
+    "definitions": {
+        "Welcome": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "device_model": {
+                    "type": "string"
+                },
+                "device_so": {
+                    "type": "string"
+                },
+                "sensors_software_version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "device_model",
+                "device_so",
+                "id",
+                "sensors_software_version"
+            ],
+            "title": "Welcome"
+        }
+    }
+}

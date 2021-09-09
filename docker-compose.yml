@@ -1,0 +1,35 @@
+version: "3"
+services:
+
+
+  kibana:
+    image: kibana:7.3.0
+    container_name: Kibana
+    restart: unless-stopped
+    ports:
+      - 5601:5601
+    networks:
+      - es-net
+      
+      
+  elasticsearch:
+    image: elasticsearch:7.3.0
+    container_name: Elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - discovery.seed_hosts=127.0.0.1:9300
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - /home/joao//Documents/linux dados/worckspace/projSimon/containers/:/usr/share/elasticsearch/data
+    networks:
+      - es-net
+
+
+
+networks:
+  es-net:
+    external: true
+

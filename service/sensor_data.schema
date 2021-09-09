@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Sensors",
+    "definitions": {
+        "Sensors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "location": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "date": {
+                    "type": "number"
+                },
+                "sensor_model": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "property": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "date",
+                "id",
+                "location",
+                "property",
+                "sensor_model",
+                "value"
+            ],
+            "title": "Sensors"
+        }
+    }
+}
